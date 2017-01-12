@@ -1,0 +1,26 @@
+---
+   - hosts: vagrant-packer-centos7 
+     tasks:
+
+     - name: Create a frozen lvm container
+       lxc_container:
+         name: test-container-lvm
+         container_log: true
+         template: ubuntu
+         state: frozen
+         backing_store: lvm
+         template_options: --release trusty
+         container_command: |
+           apt-get update
+           apt-get install -y vim lxc-dev
+           echo 'hello world.' | tee /opt/started
+           if [[ -f "/opt/started" ]]; then
+               echo 'hello world.' | tee /opt/found-started
+           fi
+         container_config:
+           - "lxc.aa_profile=unconfined"
+           - "lxc.cgroup.devices.allow=a *:* rmw"
+         archive: true
+         archive_path: /tmp
+         archive_compression: bzip2
+       register: lvm_container_info

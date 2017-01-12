@@ -1,0 +1,4 @@
+#- include: roles/core/ssl.yml
+- include: roles/core/core.yml
+- include: roles/core/users.yml
+#- include: roles/core/lxc.yml

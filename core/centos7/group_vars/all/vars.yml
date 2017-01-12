@@ -1,0 +1,26 @@
+---
+#file: standard_edition/group_vars/all
+domainname_default: forgerockdemo.com
+domainname_idp: forgerockdemo.com
+domainname_sp: forgerocksp.org
+
+hostname_default: iam
+hostname_idp: iam
+hostname_sp: mysp
+
+port_node_hrlite: 17070
+port_tomcat_charlie: 38080
+
+tmp_dir: /var/tmp
+
+home_frdp: /opt/forgerock
+home_tools: "{{home_frdp}}/tools"
+home_node: "{{home_frdp}}/ext/node"
+home_apache_utils: "{{home_frdp}}/ext/apache-httpd/instances-2.4/utils"
+home_tomcat_charlie: "{{home_frdp}}/ext/tomcat/instances-7.0/charlie"
+home_apps_frdp: "{{home_frdp}}/ext/tomcat/instances-7.0/charlie/webapps/apps#frdp"
+home_apps_hrlite_rest: "{{home_frdp}}/opt/forgerock/ext/node/hrlite/rest"
+home_apps_hrlite_ui: "{{home_frdp}}/ext/tomcat/instances-7.0/charlie/webapps/apps#hrlite"
+
+openidm_home: "{{home_frdp}}/products/IDM/current/openidm"
+openidm_project: "{{home_frdp}}/products/IDM/current/projects/frdp"

@@ -1,0 +1,53 @@
+---
+   - hosts: vagrant-packer-centos7 
+     tasks:
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: net-tools 
+         state: latest
+
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: epel-release 
+         state: latest
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: lxc 
+         state: latest
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: lxc-templates 
+         state: latest
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: libcap-devel 
+         state: latest
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: libcgroup 
+         state: latest
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: wget 
+         state: latest
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: bridge-utils
+         state: latest
+
