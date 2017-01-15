@@ -4,8 +4,9 @@
 
      - name: Create a started container
        lxc_container:
-         name: test-container-started
+         name: test-container
          container_log: true
-         template: lxc-centos 
+         template: centos
          state: started
-         template_options: --release trusty
+         template_options: --release 7
+       become: true
