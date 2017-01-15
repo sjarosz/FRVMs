@@ -51,3 +51,54 @@
          name: bridge-utils
          state: latest
 
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: libvirt
+         state: latest
+
+     - service:
+         name: libvirtd 
+         state: started
+       become: true
+
+     - service:
+         name: libvirtd 
+         enabled: yes
+       become: true
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: "@Development tools"
+         state: present
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: python-devel 
+         state: latest
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: lxc-devel 
+         state: latest
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: libvirt
+         state: latest
+
+     - name: "Yum Install"
+       become: true
+       yum: 
+         name: python-pip 
+         state: latest
+
+
+     - pip:
+         name: lxc-python2 
+       become: true
+
